@@ -1,9 +1,9 @@
 # The Essential Transformer
 ## Understanding the backbone of encoders and decoders in 45-minutes
 
-This GitHub repository provides a minimalist yet comprehensive implementation of the Transformer architecture's encoder and decoder components, aimed at providing an intuitive understanding of the core concepts underlying this powerful model. The Transformer architecture has revolutionized natural language processing and machine translation. The implementations serve as a didactic resource for enthusiasts, researchers, and learners who wish to grasp its fundamental principles. 
+The Transformer architecture has revolutionized natural language processing and machine translation. This GitHub repository provides a minimalist yet comprehensive implementation of the Transformer architecture's encoder and decoder components, aimed at providing an intuitive understanding of the core concepts underlying this powerful model. The implementations serve as a didactic resource for enthusiasts, researchers, and learners who wish to grasp its fundamental principles. 
 
-To keep things simple a couple of assumptions are made:
+To keep things simple, a couple of assumptions are made:
 * positional embeddings are treated as trainable that are added to the token embeddings
 * the embedding dimensionality must be a multiple of the number of heads (the joint embedding is reshaped before softmax normalization)
 
