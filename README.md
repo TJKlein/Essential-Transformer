@@ -25,10 +25,10 @@ x = torch.randn((batch_sz,max_len,emb_dim))
 tb = TransformerBlock(max_len, emb_dim, ffn_dim, num_heads)
 tb(x)
 ```
-2. Toy example of instantiating a transformer block:
+2. Toy example of instantiating a transformer decoder:
 ```python
 import torch
-from decoder import Transformer, TransformerBlock
+from decoder import Transformer
 
 # Some toy parameters
 num_heads = 16
@@ -43,5 +43,24 @@ batch_sz = 10
 x = torch.randint(0,vocab_sz,(batch_sz, max_len))
 
 trans = Transformer(num_layers, num_heads, max_len, vocab_sz, emb_dim, ffn_dim)
+trans(x)
+```
+
+3. Toy example of instantiating a transformer encoder:
+```python
+import torch
+from encoder import Transformer
+
+num_heads = 16
+emb_dim = 768
+ffn_dim = 1024
+num_layers = 12
+max_len = 128
+vocab_sz = 10000
+batch_sz = 10
+# Toy input data corresponding to random tokens
+x = torch.randint(0,vocab_sz,(batch_sz, max_len))
+
+trans = Transformer(num_layers, vocab_sz, emb_dim, max_len, num_heads, ffn_dim)
 trans(x)
 ```
