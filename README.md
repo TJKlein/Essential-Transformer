@@ -6,7 +6,7 @@ This GitHub repository presents a minimalist yet comprehensive implementation of
 
 1. Toy example of instantiating a decoder block:
 
-```shell
+```python
 import torch
 from decoder import Transformer, TransformerBlock
 
@@ -26,7 +26,7 @@ tb = TransformerBlock(max_len, emb_dim, ffn_dim, num_heads)
 tb(x)
 ```
 2. Toy example of instantiating a transformer block:
-```shell
+```python
 import torch
 from decoder import Transformer, TransformerBlock
 
