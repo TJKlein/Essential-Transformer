@@ -71,7 +71,7 @@ class Transformer(nn.Module):
         
         trans_stack = []
         for i in range(num_layers):
-            trans_stack.append(TransformerBlock(emb_dim, ffn_dim, num_heads, dropout,act))
+            trans_stack.append(TransformerBlock(max_len, emb_dim, ffn_dim, num_heads, dropout,act))
         self.transformer = nn.Sequential(*trans_stack)
         
         self.final = nn.Linear(emb_dim, vocab_sz)
