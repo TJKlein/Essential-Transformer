@@ -31,6 +31,7 @@ class TransformerBlock(nn.Module):
         self.attn_dropout = nn.Dropout(dropout)
         
         # parameters, which are not optimized for but saved in dictionary
+        # the lower triangular matrix mask prevents from attending to future tokens
         self.register_buffer(
             "mask", 
             torch.tril(torch.ones(self.max_len, self.max_len))
